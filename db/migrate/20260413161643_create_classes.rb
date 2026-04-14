@@ -4,7 +4,7 @@ class CreateClasses < ActiveRecord::Migration[8.1]
       t.integer :number
       t.string :letter
       t.integer :students_count
-      t.belongs_to :school_id
+      t.belongs_to :school
 
       t.timestamps
     end

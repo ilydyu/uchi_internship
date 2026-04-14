@@ -18,8 +18,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_13_162234) do
     t.datetime "created_at", null: false
     t.string "letter"
     t.integer "number"
+    t.bigint "school_id"
     t.integer "students_count"
     t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_classes_on_school_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -28,14 +30,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_13_162234) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.bigint "class_id_id"
+    t.bigint "class_id"
     t.datetime "created_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.bigint "school_id_id"
+    t.bigint "school_id"
     t.string "surname"
+    t.string "token_digest", null: false
     t.datetime "updated_at", null: false
-    t.index ["class_id_id"], name: "index_students_on_class_id_id"
-    t.index ["school_id_id"], name: "index_students_on_school_id_id"
+    t.index ["class_id"], name: "index_students_on_class_id"
+    t.index ["school_id"], name: "index_students_on_school_id"
+    t.index ["token_digest"], name: "index_students_on_token_digest", unique: true
   end
 end

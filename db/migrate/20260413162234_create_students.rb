@@ -1,13 +1,16 @@
 class CreateStudents < ActiveRecord::Migration[8.1]
-  def change
-    create_table :students do |t|
-      t.string :first_name
-      t.string :last_name
-      t.string :surname
-      t.belongs_to :class_id
-      t.belongs_to :school_id
+ def change
+  create_table :students do |t|
+    t.string :first_name
+    t.string :last_name
+    t.string :surname
+    t.belongs_to :class
+    t.belongs_to :school
+    t.string :token_digest, null: false
 
-      t.timestamps
-    end
+    t.timestamps
   end
+
+    add_index :students, :token_digest, unique: true
+ end
 end

@@ -4,9 +4,6 @@ Layout/EmptyLineBetweenDefs:
   Enabled: true
   AllowAdjacentOneLineDefs: true
 
-Layout/IndentationWidth:
-  Enabled: true
-  Width: 1
 
 Layout/ParameterAlignment:
   Enabled: true

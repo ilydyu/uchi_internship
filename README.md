@@ -6,8 +6,8 @@
 
 # Как запустить
 
-`docker compose up --build`
-`docker exec -it uchi_internship-web-1 bundle exec rails db:seed`
+```docker compose up --build```
+```docker exec -it uchi_internship-web-1 bundle exec rails db:seed```
 
 # Как посмотреть API
 

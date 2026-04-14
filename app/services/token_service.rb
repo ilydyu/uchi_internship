@@ -13,8 +13,7 @@ class TokenService
   end
 
   def self.digest(token)
-    secret = Rails.application.credentials.secret_key_base
-    Digest::SHA256.hexdigest(token + secret)
+    Digest::SHA256.hexdigest(token + ENV["SALT"])
   end
 
   def self.secure_compare(a, b)

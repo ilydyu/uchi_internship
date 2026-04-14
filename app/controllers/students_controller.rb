@@ -1,6 +1,4 @@
 class StudentsController < ApplicationController
-  before_action :authenticate_request, only: [ :destroy ]
-
   def index
     render json: { data: StudentBlueprint.render_as_hash(Student.all) }
   end

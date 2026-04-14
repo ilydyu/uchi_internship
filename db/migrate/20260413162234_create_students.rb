@@ -6,7 +6,7 @@ class CreateStudents < ActiveRecord::Migration[8.1]
     t.string :surname
     t.belongs_to :class
     t.belongs_to :school
-    t.string :token_digest, null: false
+    t.string :token_digest
 
     t.timestamps
   end

@@ -1,24 +1,14 @@
-# README
+# Примечание
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Для простоты опущены детали, некоторые из них: все коммиты в мастере, нет пагинации, соль задаётся через переменные окружения при старте docker compose, приложение запускается в development режиме.
+Сериалайзеры лежат в папке `blueprints`, сервисные объекты (один) в `services`.
+Использовались дополнительные гемы, для сериализации `blueprinter`, для тестов `rswag`, `rspec`, `faker`, `factory-bot`.
 
-Things you may want to cover:
+# Как запустить
 
-* Ruby version
+`docker compose up --build`
+`docker exec -it uchi_internship-web-1 bundle exec rails db:seed`
 
-* System dependencies
+# Как посмотреть API
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+По адресу [localhost:3000/api-docs](localhost:3000/api-docs). Там же можно подёргать эндпойнты.

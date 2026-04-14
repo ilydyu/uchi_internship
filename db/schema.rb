@@ -36,7 +36,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_13_162234) do
     t.string "last_name"
     t.bigint "school_id"
     t.string "surname"
-    t.string "token_digest", null: false
+    t.string "token_digest"
     t.datetime "updated_at", null: false
     t.index ["class_id"], name: "index_students_on_class_id"
     t.index ["school_id"], name: "index_students_on_school_id"

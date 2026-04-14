@@ -7,9 +7,11 @@
 # Как запустить
 
 ```
-docker compose up --build
+SALT=qwe docker compose up --build
 ```
 ```
+docker exec -it uchi_internship-web-1 bundle exec rails db:create && 
+docker exec -it uchi_internship-web-1 bundle exec rails db:migrate && 
 docker exec -it uchi_internship-web-1 bundle exec rails db:seed
 ```
 
